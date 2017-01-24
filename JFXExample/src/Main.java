@@ -1,3 +1,4 @@
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -12,20 +13,17 @@ public class Main extends Application {
     private Button printStuff;
     private Scene scene;
 
-    public static void main (String[] args){
+    public static void main(String[] args) {
         launch(args);
 
-
     }
+
     /**
-     * Lag et nytt StackPane(layout)
-     * Lag nye komponenter
-            * Legg komponentene til i layoutet.
-     * Lag en ny scene og send inn layoutet som parameter.
-            * set scenen i primaryStaget.
-     * Vis primaryStaget.
+     * Lag et nytt StackPane(layout) Lag nye komponenter Legg komponentene til i
+     * layoutet. Lag en ny scene og send inn layoutet som parameter. set scenen
+     * i primaryStaget. Vis primaryStaget.
      *
-     * @param   primaryStage    hele vinduet som skal kjøres
+     * @param primaryStage hele vinduet som skal kjøres
      *
      */
     public void start(Stage primaryStage) {
@@ -39,6 +37,8 @@ public class Main extends Application {
             printStuff.setMaxHeight(150);
 
             layout.getChildren().add(printStuff);
+            printStuff.setLayoutX(800);
+            printStuff.setLayoutY(800);
             layout.setId("pane");
 
             scene = new Scene(layout, 1000, 1000);
@@ -49,7 +49,7 @@ public class Main extends Application {
             primaryStage.show();
             printStuff.setOnAction(event -> System.out.println(Board.getBalance()));
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -58,10 +58,8 @@ public class Main extends Application {
     /**
      * Load a background image
      */
-    private void setBackgroundImg(){
+    private void setBackgroundImg() {
         scene.getStylesheets().addAll(this.getClass().getResource("Style.css").toExternalForm());
     }
-
-
 
 }
