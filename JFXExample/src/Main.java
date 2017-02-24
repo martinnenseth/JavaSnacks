@@ -47,7 +47,7 @@ public class Main extends Application {
 
             primaryStage.setScene(scene);
             primaryStage.show();
-            printStuff.setOnAction(event -> System.out.println(Board.getBalance()));
+            printStuff.setOnAction(e -> System.out.println(Board.getBalance()));
 
         } catch (Exception e){
             e.printStackTrace();
